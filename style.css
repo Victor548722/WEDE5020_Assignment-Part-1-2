@@ -5,22 +5,29 @@ setting up the core fonts and backgrounds*/ * {
     box-sizing: border-box;
 }
 
-body{
+body {
+    /* --- new silk background texture code --- */
+    background-image: url("images/background-texture.jpg");
+    background-repeat: no-repeat; /* Prevents it from tiling */
+    background-attachment: fixed; /* Keeps it locked in place when scrolling */
+    background-size: cover;       /* Stretches it to fill the screen */
+    
+    
+    
+    /* Core Typography & Base Colors */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-colour:#FDFBF7; /* Soft cream background */
-    color: #222222; /* Dark grey text for readability */
+    color: #222222;            /* Dark charcoal text for readability */
     line-height: 1.6;
-    /*we use 1rem font size because of dynamic scaling,1rem = 1× root font-size; scales with user/browser preferences */
     font-size: 1rem;
-
 }
+
 header {
     background-color: #1A1A1A;
     color: #FFFFFF;
 }
 
 header div:first-child {
-    background-color: #A31D1D; /* Authentic deep crimson red for phone banner */
+    background-color: #ff0000; /* Authentic deep crimson red for phone banner */
     text-align: center;
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
