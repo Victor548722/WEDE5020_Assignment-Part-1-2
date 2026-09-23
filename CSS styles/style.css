@@ -4,3 +4,13 @@ setting up the core fonts and backgrounds*/ * {
     padding: 0;
     box-sizing: border-box;
 }
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-colour:#FDFBF7; /* Soft cream background */
+    color: #222222; /* Dark grey text for readability */
+    line-height: 1.6;
+    /*we use 1rem font size because of dynamic scaling,1rem = 1× root font-size; scales with user/browser preferences */
+    font-size: 1rem;
+
+}
