@@ -6,17 +6,29 @@ setting up the core fonts and backgrounds*/ * {
 }
 
 body {
-    /* --- new silk background texture code --- */
-    background-image: url("images/background-texture.jpg");
-    background-repeat: no-repeat; /* Prevents it from tiling */
-    background-attachment: fixed; /* Keeps it locked in place when scrolling */
-    background-size: cover;       /* Stretches it to fill the screen */
-    
-    
-    
+    /* Layer 1 (Top): The Chinese Dragon - positioned on the right */
+    background-image: url("images/ChineseDragon.png"),
+        /* Layer 2 (Bottom): The Tree Texture */
+        url("images/tree-background1.png");
+
+    /* Dragon doesn't repeat, but the tree texture WILL tile as a pattern */
+    background-repeat: no-repeat, repeat;
+
+    /* Position the dragon on the right, and tile the tree texture from the top-left */
+    background-position: right 10% center, top left;
+
+    /* 
+      Dragon image and tree image background/updated from previous cream (contain) note this took me 
+      a decent amount of time to figure out how to make the dragon image fit the screen without stretching it and also making sure that the tree texture is still visible and not stretched or distorted.
+    */
+    background-size: contain, 350px auto;
+
+    background-attachment: fixed, fixed;
+
     /* Core Typography & Base Colors */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #222222;            /* Dark charcoal text for readability */
+    color: #222222;
+    /* Dark charcoal text for readability */
     line-height: 1.6;
     font-size: 1rem;
 }
@@ -27,7 +39,47 @@ header {
 }
 
 header div:first-child {
-    background-color: #ff0000; /* Authentic deep crimson red for phone banner */
+    background-color: #ff0000;
+    /* Authentic deep crimson red for phone banner */
+    text-align: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+}
+
+nav strong {
+    font-size: 1.4rem;
+    color: #e5b30f;
+    /* Gold accent for brand name */
+}
+
+nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    font-weight: 500;
+}
+
+nav a:hover,
+nav a:focus {
+    color: #e5b30f;
+    /* Highlights link on hover */
+}
+/*Header and Navigation*/
+
+header{background-color: #1A1A1A;
+    color: #FFFFFF;}
+
+    header div:first-child {
+    background-color: #ff0000;
     text-align: center;
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
@@ -40,19 +92,30 @@ nav {
     margin: 0 auto;
     padding: 1rem 1.5rem;
 }
-
 nav strong {
     font-size: 1.4rem;
-    color: #D4AF37; /* Gold accent for brand name */
+    color: #e5b30f;
 }
-
 nav a {
     color: #FFFFFF;
     text-decoration: none;
     margin: 0 0.5rem;
     font-weight: 500;
 }
-
 nav a:hover, nav a:focus {
-    color: #D4AF37; /* Highlights link on hover */
+    color: #e5b30f;
 }
+.featured-grid {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: flex-start;
+    gap: 2rem;               
+    max-width: 1000px;       
+    margin: 2rem auto 2rem 0; /* Sets the left margin to 0 so it aligns completely to the left edge */
+}
+
+.featured-grid article {
+    text-align: center;
+}
+
+/*typography and layout sections*/
