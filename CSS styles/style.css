@@ -1,0 +1,6 @@
+*/Css reset and base styles. Margins and padding,
+setting up the core fonts and backgrounds*/ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
