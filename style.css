@@ -160,17 +160,60 @@ nav a:focus {
 
 }
 
+/* Tablet and Smaller Screens (Max Width: 768px) */
+@media (max-width: 768px) {
+
+    /* Keep navigation horizontal or clean on tablets, or stack cleanly */
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    /* Hide the navigation divider pipes on mobile so they don't break into new lines */
+    nav a+a::before {
+        content: "";
+        margin: 0;
+    }
+
+    /* Stack multi-column elements */
+    .featured-grid {
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem auto;
+        gap: 1.5rem;
+    }
+}
+
+/*initially used vs codes intuitive typing and my web design layout did not fit the phone screens/*
+/* mobile phones are usually at a max with of (Max Width: 480px) */
 @media (max-width: 480px) {
 
-    /* Adjust top banner font size for tight screens */
+    /* Fix top banner sizing */
     header div:first-child {
         font-size: 0.75rem;
         padding: 0.4rem;
     }
 
-    /* Scale down the brand name header text */
+    /* Scale down brand title */
     nav strong {
         font-size: 1.2rem;
+    }
+
+
+    /* we want to hide or tone down the heavy background dragon on small mobile screens 
+       so text remains fully legible */
+    body {
+        background-image: url("images/tree-background1.png");
+        background-repeat: repeat;
+        background-size: 300px auto;
+        font-size: 0.95rem;
+    }
+
+    /* Ensure all content images scale cleanly and never overflow screens */
+    img {
+        max-width: 100%;
+        height: auto;
     }
 
     .featured-grid article {
