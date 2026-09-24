@@ -141,32 +141,89 @@ nav a:focus {
 .featured-grid article {
     text-align: center;
 }
+.hero-carousel {
+    width: 100%;
+    max-width: 1100px;
+    margin: 2rem 0 2rem 2rem; /* Pushes the entire carousel over to the left edge */
+    text-align: left;
+    padding: 1rem;
+}
 
+.hero-carousel h2 {
+    color: #e5b30f;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+}
 
-/*responsive design and media queries for mobile devices and tablets*/
-/* Stack navigation elements vertically on smaller displays*/
-@media (max-width: 768px) {
-    
-    /* Stack navigation items vertically on smaller screens */
-    nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 1rem;
-    }
+.carousel-container {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: hidden; /* will hide the scrollbar so it acts like a clean slideshow */
+    scroll-behavior: smooth;
+    padding-bottom: 1rem;
+}
 
-    /* Hide the divider pipes on mobile so they don't break onto separate lines */
+.carousel-slide {
+    flex: 0 0 300px; 
+    background: #1A1A1A;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    transition: transform 0.5s ease; /* Smooth transition effect when shifting */
+}
+
+.carousel-slide img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important;
+    display: block;
+}
+
+.carousel-caption {
+    padding: 1rem;
+    color: #FFFFFF;
+}
+
+.carousel-caption h3 {
+    color: #e5b30f;
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+}
+
+.carousel-caption p {
+    font-size: 0.9rem;
+    color: #cccccc;
+    margin-bottom: 0.8rem;
+}
+
+.carousel-caption button {
+    background-color: #e5b30f;
+    color: #1a1a1a;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.carousel-caption button:hover {
+    background-color: #ffffff;
+}
+
+    /* hide the divider pipes on mobile so they don't break onto separate lines */
     nav a + a::before {
         display: none;
     }
 
-    /* Stack grid elements and ensure they fit full width */
+    /* stack grid elements and ensure they fit full width */
     .featured-grid {
         flex-direction: column;
         align-items: center;
         width: 100%;
     }
-}
+
 
 /* Small Mobile Phones (Max Width: 480px) */
 @media (max-width: 480px) {

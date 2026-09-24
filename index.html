@@ -12,58 +12,77 @@
 
     <!-- Utility Header and navigation -->
     <header>
-        
-            <div>
-                <p>Call: +27 72 771 6461 | Order / Inquiries | 18 Newton St, Gqeberha</p>
-            </div>
-            <nav>
-                <strong>1BAO-Dimsum & Noodles</strong>
-                <a href="index.html">Home</a> |
-                <a href="about.html">About Us</a> |
-                <a href="menu.html">Menu</a> |
-                <a href="promotions.html">Promotions</a> |
-                <a href="contact.html">Contact Us</a>
-            </nav>
+
+        <div>
+            <p>Call: +27 72 771 6461 | Order / Inquiries | 18 Newton St, Gqeberha</p>
+        </div>
+        <nav>
+            <strong>1BAO-Dimsum & Noodles</strong>
+            <a href="index.html">Home</a> |
+            <a href="about.html">About Us</a> |
+            <a href="menu.html">Menu</a> |
+            <a href="promotions.html">Promotions</a> |
+            <a href="contact.html">Contact Us</a>
+        </nav>
     </header>
 
     <hr>
 
     <!-- Hero Carousel section -->
-    <section>
-        <h2>HERO CAROUSEL</h2>
-        <div>
-            <img src="images/hero-bao-slide.jpg" alt="Fresh Handcrafted Asian Steamed Bao Buns" width="600">
-            <h1>Fresh Handcrafted Asian Steamed Bao Buns</h1>
-            <p>Authentic Asian takeaway food prepared daily in Gqeberha.</p>
-            <a href="menu.html"><button type="button">View Full Menu</button></a>
+     <section class="hero-carousel">
+        
+        <div class="carousel-container">
+            <!-- Slide 1 -->
+            <div class="carousel-slide">
+                <img src="images/ginger-chicken.png" alt="Savory Ginger Chicken">
+                <div class="carousel-caption">
+                    <h3>Savory Ginger Chicken</h3>
+                    <p>Tender chicken infused with fresh ginger and traditional seasonings.</p>
+                    <a href="menu.html"><button type="button">View Full Menu</button></a>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-slide">
+                <img src="images/chicken-teriyaki.png" alt="Classic Chicken Teriyaki">
+                <div class="carousel-caption">
+                    <h3>Classic Chicken Teriyaki</h3>
+                    <p>Glazed in a sweet and savory house-made teriyaki sauce.</p>
+                    <a href="menu.html"><button type="button">View Full Menu</button></a>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-slide">
+                <img src="images/Hong-Kong.png" alt="Hong Kong Style Specialties">
+                <div class="carousel-caption">
+                    <h3>Hong Kong Style Specialties</h3>
+                    <p>Authentic regional flavors prepared fresh to order.</p>
+                    <a href="menu.html"><button type="button">View Full Menu</button></a>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="carousel-slide">
+                <img src="images/dumplings-sauce.png" alt="Signature Dumplings with Sauce">
+                <div class="carousel-caption">
+                    <h3>Signature Dumplings & Sauce</h3>
+                    <p>Hand-wrapped dumplings served with our spicy signature dipping sauce.</p>
+                    <a href="menu.html"><button type="button">View Full Menu</button></a>
+                </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="carousel-slide">
+                <img src="images/bow-tie.png" alt="Specialty Bow-Tie Noodles">
+                <div class="carousel-caption">
+                    <h3>Specialty Bow-Tie Noodles</h3>
+                    <p>Tossed with crisp vegetables and flavorful house oils.</p>
+                    <a href="menu.html"><button type="button">View Full Menu</button></a>
+                </div>
+            </div>
         </div>
     </section>
-
-    <hr>
-
-    <!-- Featured Menu highlights grid -->
-    <section>
-        <div class="featured-grid">
-            <article>
-                <img src="images/pork-bao.jpg" alt="Pork Bao Tender Braised Belly" width="280">
-                <h3>Pork Bao Tender Braised Belly</h3>
-                <a href="menu.html"><button type="button">View Item</button></a>
-            </article>
-
-            <!--These images will be able to display on the website as the image names are the same & in the same file directory as our page templates -->
-            <article>
-                <img src="images/dim-sum.jpg" alt="Dim Sum Steamed" width="280">
-                <h3>Dim Sum Steamed</h3>
-                <a href="menu.html"><button type="button">View Item</button></a>
-            </article>
-
-            <article>
-                <img src="images/lo-mein.jpg" alt="Lo Mein House Noodle Bowl" width="280">
-                <h3>Lo Mein House Noodle Bowl</h3>
-                <a href="menu.html"><button type="button">View Item</button></a>
-        </div>
-    </section>
-
     <hr>
 
     <!-- Promotion Banner -->
@@ -81,6 +100,34 @@
     <footer>
         <p>Footer : Copyright &copy; 2026 1 BAO | 18 Newton St, Newton Park, Gqeberha</p>
     </footer>
+    <footer>
+        <p>Footer : Copyright &copy; 2026 1 BAO | 18 Newton St, Newton Park, Gqeberha</p>
+    </footer>
+
+    <!-- Auto-rotation script for the hero carousel -->
+    <script>
+        const container = document.querySelector('.carousel-container');
+        let scrollAmount = 0;
+        
+        function autoRotateCarousel() {
+            if (container) {
+                // Determine how far to scroll based on card width + gap (300px + 24px gap = 324px)
+                const scrollStep = 324;
+                const maxScrollLeft = container.scrollWidth - container.clientWidth;
+                
+                if (container.scrollLeft >= maxScrollLeft) {
+                    // this is so that if it reaches the end, smoothly loop back to the start
+                    container.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    //  scroll to the next card
+                    container.scrollBy({ left: scrollStep, behavior: 'smooth' });
+                }
+            }
+        }
+
+        // Runs the rotation function every 3 seconds (3000 milliseconds)
+        setInterval(autoRotateCarousel, 3000);
+    </script>
 
 </body>
 
