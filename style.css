@@ -4,6 +4,12 @@ setting up the core fonts and backgrounds*/ * {
     padding: 0;
     box-sizing: border-box;
 }
+/*responsive image rule*/
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 
 body {
     /* Layer 1 (Top): The Chinese Dragon - positioned on the right */
