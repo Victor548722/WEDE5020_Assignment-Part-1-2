@@ -130,7 +130,10 @@ nav a:focus {
 }
 
 
-
+/*this will force the image to stretch(inside the carousel slides) of the container without breaking out*/
+/*will look for the height and width of the caoursel image and locks it to a fixed height and width*/
+/*will ensure the image is cropped and scales properly*/
+/*removes awkward inline spacing underneath the image*/
 .carousel-slide img {
     width: 100% !important;
     max-width: 100% !important;
@@ -252,24 +255,48 @@ nav a+a::before {
 
 
 /* Small Mobile Phones (Max Width: 480px) */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack logo on top, menu links below */
+        align-items: center;
+        gap: 0.8rem;
+        padding: 1rem;
+        text-align: center;
+    }
 
-    /* Adjust top info banner text size */
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap; /* Allows links to drop*/
+        justify-content: center;
+        gap: 0.4rem;
+    }
+
+    nav a {
+        margin: 0.2rem 0.4rem;
+        font-size: 0.95rem;
+    }
+
+    .hero-carousel,
+    .featured-grid {
+        margin: 2rem auto;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .featured-grid article {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
     header div:first-child {
         font-size: 0.7rem;
         padding: 0.3rem;
         text-align: center;
     }
 
-    /* Scale down main title */
     nav strong {
         font-size: 1.1rem;
         text-align: center;
-    }
-
-    /* Ensure all images scale down and never overflow the phone screen */
-    img {
-        max-width: 100%;
-        height: auto;
     }
 }
