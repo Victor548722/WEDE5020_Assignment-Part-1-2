@@ -4,6 +4,7 @@ setting up the core fonts and backgrounds*/ * {
     padding: 0;
     box-sizing: border-box;
 }
+
 /*responsive image rule*/
 img {
     max-width: 100%;
@@ -128,50 +129,7 @@ nav a:focus {
     color: #e5b30f;
 }
 
-.featured-grid {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 2rem;
-    max-width: 1000px;
-    margin: 2rem auto 2rem 0;
-    /* Sets the left margin to 0 so it aligns completely to the left edge */
-}
 
-.featured-grid article {
-    text-align: center;
-}
-.hero-carousel {
-    width: 100%;
-    max-width: 1100px;
-    margin: 2rem 0 2rem 2rem; /* Pushes the entire carousel over to the left edge */
-    text-align: left;
-    padding: 1rem;
-}
-
-.hero-carousel h2 {
-    color: #e5b30f;
-    margin-bottom: 1rem;
-    font-size: 1.6rem;
-}
-
-.carousel-container {
-    display: flex;
-    gap: 1.5rem;
-    overflow-x: hidden; /* will hide the scrollbar so it acts like a clean slideshow */
-    scroll-behavior: smooth;
-    padding-bottom: 1rem;
-}
-
-.carousel-slide {
-    flex: 0 0 300px; 
-    background: #1A1A1A;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    text-align: left;
-    transition: transform 0.5s ease; /* Smooth transition effect when shifting */
-}
 
 .carousel-slide img {
     width: 100% !important;
@@ -212,22 +170,90 @@ nav a:focus {
     background-color: #ffffff;
 }
 
-    /* hide the divider pipes on mobile so they don't break onto separate lines */
-    nav a + a::before {
-        display: none;
-    }
+/* hide the divider pipes on mobile so they don't break onto separate lines */
+nav a+a::before {
+    display: none;
+}
 
-    /* stack grid elements and ensure they fit full width */
-    .featured-grid {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
+/*hero carousel styles/section*/
+.hero-carousel {
+    width: 100%;
+    max-width: 1100px;
+    margin: 2rem 0 2rem 2rem;
+    text-align: left;
+    padding: 1rem;
+}
+
+.carousel-container {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding-bottom: 1rem;
+}
+
+.carousel-slide {
+    flex: 0 0 300px;
+    background: #1A1A1A;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 220px !important;
+    object-fit: cover !important;
+    display: block;
+}
+
+/*featured grid to align to the left*/
+.featured-grid {
+    display: flex;
+    flex-direction: column;
+    /* Stacks the 3 dish items vertically */
+    align-items: flex-start;
+    /* Keeps them aligned to the left side */
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 2rem 0 2rem 2rem;
+}
+
+.featured-grid article {
+    flex: 0 0 300px;
+    background: #1A1A1A;
+    border-radius: 8px;
+    padding: 1rem;
+    color: #FFFFFF;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.featured-grid article img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 0.8rem;
+}
+
+.featured-grid article h3 {
+    color: #e5b30f;
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+}
+
+.featured-grid article p {
+    font-size: 0.9rem;
+    color: #cccccc;
+}
 
 
 /* Small Mobile Phones (Max Width: 480px) */
 @media (max-width: 480px) {
-    
+
     /* Adjust top info banner text size */
     header div:first-child {
         font-size: 0.7rem;
